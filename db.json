@@ -1,11 +1,18 @@
 {
   "contacts": [
     {
-      "name": "jhg",
-      "email": "jkh",
-      "phone": "jh",
-      "image": "kjh",
-      "id": 3
+      "name": "Begimay ",
+      "email": "abdraimova09@gmail.com",
+      "phone": "0707456234dsfghj",
+      "image": "image",
+      "id": 1
+    },
+    {
+      "name": "dsfvbrn",
+      "email": "cgh",
+      "phone": "cxcvbn",
+      "image": "xcvbn",
+      "id": 2
     }
   ]
 }

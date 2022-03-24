@@ -50,8 +50,8 @@ const ContactContext = ({ children }) => {
         })
     }
 
-    const editContact = async (id) => {
-        await axios.patch(`http://localhost:8000/contacts/${id}`)
+    const editedContact = async (id, edited) => {
+        await axios.patch(`http://localhost:8000/contacts/${id}`, edited)
         getAllContacts()
     }
 
@@ -69,7 +69,8 @@ const ContactContext = ({ children }) => {
             getAllContacts,
             handleAddContact,
             deleteContact,
-            getEditContact
+            getEditContact,
+            editedContact
         }}>
             {children}
         </contactContext.Provider>
