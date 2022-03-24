@@ -3,12 +3,14 @@ import './App.css';
 import AddContact from './components/AddContact/AddContact';
 import ContactList from './components/ContactList/ContactList';
 import EditContact from './components/EditContact/EditContact';
+import HomePage from './components/Header/Home/HomePage';
 import ContactContext from './Context/ContactsContext';
 
 function App() {
   return (
     <ContactContext>
       <BrowserRouter>
+        <HomePage />
         <Routes>
           <Route exact path="/add" element={<AddContact />} />
           <Route exact path="/list" element={<ContactList />} />

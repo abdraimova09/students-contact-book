@@ -7,7 +7,8 @@ const API = "http://localhost:8000/contacts"
 
 const INIT_STATE = {
     contacts: [],
-    editContact: null
+    editContact: null,
+    pages: 0
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -15,7 +16,10 @@ const reducer = (state = INIT_STATE, action) => {
         case "GET_CONTACT":
             return {
                 ...state,
-                contacts: action.payload
+                contacts: action.payload.data,
+                pages: Math.ceil(action.payload.headers['x-total-count'] / 1)
+
+
             }
         case "GET_EDIT_CONTACT":
             return {
@@ -30,11 +34,14 @@ const reducer = (state = INIT_STATE, action) => {
 const ContactContext = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
     const getAllContacts = async () => {
-        const { data } = await axios(API)
+        const result = await axios(API + window.location.search)
+        console.log(result)
         dispatch({
             type: "GET_CONTACT",
-            payload: data
+            payload: result,
+
         })
+
     }
 
     const deleteContact = async (id) => {
@@ -62,15 +69,18 @@ const ContactContext = ({ children }) => {
 
     }
 
+
     return (
         <contactContext.Provider value={{
             contacts: state.contacts,
             editContact: state.editContact,
+            pages: state.pages,
             getAllContacts,
             handleAddContact,
             deleteContact,
             getEditContact,
-            editedContact
+            editedContact,
+
         }}>
             {children}
         </contactContext.Provider>
