@@ -1,10 +1,21 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddContact from './components/AddContact/AddContact';
+import ContactList from './components/ContactList/ContactList';
+import EditContact from './components/EditContact/EditContact';
+import ContactContext from './Context/ContactsContext';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <ContactContext>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/add" element={<AddContact />} />
+          <Route exact path="/list" element={<ContactList />} />
+          <Route exact path="/edit/:id" element={<EditContact />} />
+        </Routes>
+      </BrowserRouter>
+    </ContactContext>
   );
 }
 

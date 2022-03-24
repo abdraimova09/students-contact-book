@@ -1,32 +1,11 @@
 {
-    "contacts": [
-        {
-            "name": "Diana",
-            "phone": "99131393113",
-            "id":1
-        },
-        {
-            "name": "Alex",
-            "phone": "99131393113",
-            "id":2
-        },
-        {
-            "name": "Jack",
-            "phone": "99131393113",
-            "id":3
-        },
-
-                {
-            "name": "Kate",
-            "phone": "99131393113",
-            "id":4
-        },
-        
-        {
-            "name": "Ann",
-            "phone": "99131393113",
-            "id":5
-        }
-
-    ]
+  "contacts": [
+    {
+      "name": "jhg",
+      "email": "jkh",
+      "phone": "jh",
+      "image": "kjh",
+      "id": 3
+    }
+  ]
 }
